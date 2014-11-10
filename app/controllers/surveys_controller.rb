@@ -11,7 +11,8 @@ class SurveysController < ApplicationController
     @survey = current_user.surveys.new(survey_params)
     if @survey.save
       redirect_to root_path
-    else render :new
+    else
+      render :new
     end
   end
 

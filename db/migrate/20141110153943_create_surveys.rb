@@ -5,9 +5,9 @@ class CreateSurveys < ActiveRecord::Migration
       t.text :description
       t.integer :user_id
 
-      t.timestamps
+      t.timestamps null: false
     end
 
-    add_index :surveys, :user_id
+    add_index :surveys, :user_id, null: false
   end
 end
