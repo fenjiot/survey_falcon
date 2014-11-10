@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110153943) do
+ActiveRecord::Schema.define(version: 20141110200403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "questions", force: true do |t|
+    t.integer  "survey_id",  null: false
+    t.string   "style_type", null: false
+    t.integer  "style_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
 
   create_table "surveys", force: true do |t|
     t.string   "name",        null: false
@@ -25,6 +35,15 @@ ActiveRecord::Schema.define(version: 20141110153943) do
   end
 
   add_index "surveys", ["user_id"], name: "index_surveys_on_user_id", using: :btree
+
+  create_table "text_styles", force: true do |t|
+    t.integer  "question_id", null: false
+    t.text     "body",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "text_styles", ["question_id"], name: "index_text_styles_on_question_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false
