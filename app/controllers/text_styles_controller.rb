@@ -5,11 +5,11 @@ class TextStylesController < ApplicationController
   end
 
   def create
-    text_style = TextStyle.new(text_style_params)
-    survey = load_survey_from_url
-    if text_style.save
-      survey.questions.create(style: text_style)
-      redirect_to survey_path(survey)
+    @text_style = TextStyle.new(text_style_params)
+    @survey = load_survey_from_url
+    if @text_style.save
+      @survey.questions.create(style: @text_style)
+      redirect_to survey_path(@survey)
     else
       render :new
     end
