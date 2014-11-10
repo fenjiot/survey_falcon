@@ -8,10 +8,9 @@ class TextStylesController < ApplicationController
   def create
     text_style = TextStyle.new(text_style_params)
     survey = Survey.find(params[:survey_id])
-    binding.pry
     if text_style.save
       survey.questions.create(style: text_style)
-      redirect_to :back
+      redirect_to survey_path(survey)
     else
       render :new
     end

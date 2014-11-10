@@ -37,13 +37,10 @@ ActiveRecord::Schema.define(version: 20141110200403) do
   add_index "surveys", ["user_id"], name: "index_surveys_on_user_id", using: :btree
 
   create_table "text_styles", force: true do |t|
-    t.integer  "question_id", null: false
-    t.text     "body",        null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "body",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "text_styles", ["question_id"], name: "index_text_styles_on_question_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false
