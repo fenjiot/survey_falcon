@@ -1,3 +1,4 @@
 <%= @survey.name %>
 
+<%= link_to "Add a text question", new_survey_text_style_path(@survey) %>
 <%= render @survey.questions %>

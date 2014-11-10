@@ -1,0 +1,10 @@
+<%= form_for [survey, text_style] do |form| %>
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
