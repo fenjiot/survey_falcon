@@ -1,0 +1,18 @@
+<h2>Create a survey</h2>
+
+<div>
+<%= form_for @survey do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div>
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+</div>
+
+<div>
+  <%= form.submit %>
+</div>
+
+<% end %>
