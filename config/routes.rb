@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :surveys, only: [:index, :show, :new, :create] do
     resources :questions, only: [:show, :new, :create]
     resources :text_styles, only: [:create, :new]
+    resources :multi_choice_styles, only: [:new, :create, :show]
+    resources :multi_choice_options, only: [:new, :create, :show]
   end
 
   root "surveys#index"
