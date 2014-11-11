@@ -1,10 +1,10 @@
 <%= @survey.name %>
 
-<%= link_to "Add a text question", new_survey_text_style_path(@survey) %>
-<%= link_to "Edit survey", edit_survey_path(@survey) %>
-<%= button_to "Delete survey", survey_path(@survey), method: :delete %>
+<% if current_user == @survey.user %>
+  <%= link_to "Add a text question", new_survey_text_style_path(@survey) %>
+  <%= link_to "Edit survey", edit_survey_path(@survey) %>
+  <%= button_to "Delete survey", survey_path(@survey), method: :delete %>
+<% end %>
 <ul>
   <%= render @survey.questions %>
 </ul>
-
-
