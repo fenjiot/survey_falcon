@@ -21,11 +21,11 @@ class SurveysController < ApplicationController
   end
 
   def edit
-    @survey = Survey.find(params[:id])
+    @survey = current_user.surveys.find(params[:id])
   end
 
   def update
-    @survey = Survey.find(params[:id])
+    @survey = current_user.surveys.find(params[:id])
 
     if @survey.update(survey_params)
       redirect_to surveys_path
@@ -35,7 +35,7 @@ class SurveysController < ApplicationController
   end
 
   def destroy
-    survey = Survey.find(params[:id])
+    survey = current_user.surveys.find(params[:id])
     survey.destroy
 
     redirect_to surveys_path
