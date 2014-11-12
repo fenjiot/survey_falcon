@@ -14,7 +14,7 @@ class MultiChoiceStylesController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @multi_choice_style = load_multi_choice_style_from_url
     @multi_choice_options = @multi_choice_style.multi_choice_options 

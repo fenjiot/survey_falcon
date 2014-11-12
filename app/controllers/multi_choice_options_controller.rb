@@ -6,8 +6,9 @@ class MultiChoiceOptionsController < ApplicationController
 
   def create
     @multi_choice_style = load_multi_choice_style_from_url
-    @question = Question.where(style_id:params[:multi_choice_style_id], style_type: "MultiChoiceStyle").first
-    @multi_choice_option = @multi_choice_style.multi_choice_options.new(multi_choice_option_params)
+    @question = question_finder
+    @multi_choice_option = @multi_choice_style.multi_choice_options
+      .new(multi_choice_option_params)
     if @multi_choice_option.save
       redirect_to survey_path(@question.survey)
     else
@@ -23,5 +24,10 @@ class MultiChoiceOptionsController < ApplicationController
 
   def multi_choice_option_params
     params.require(:multi_choice_option).permit(:body)
+  end
+
+  def question_finder
+    Question.where(style_id:params[:multi_choice_style_id],
+                   style_type: "MultiChoiceStyle").first
   end
 end
