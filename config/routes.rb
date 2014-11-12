@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :surveys do
-    resources :questions, only: [:show, :new, :create]
+    resources :questions, only: [:show, :new, :create] do
+
+  resources :text_answers
+    end
+
+    end
     resources :text_styles, only: [:create, :new]
     resources :multi_choice_styles, only: [:new, :create, :show]
   end
@@ -11,6 +16,7 @@ Rails.application.routes.draw do
   resources :multi_choice_styles, only: [] do
     resources :multi_choice_options, only: [:new, :create, :show]
   end
+
 
   root "surveys#index"
 end
