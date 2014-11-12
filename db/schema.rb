@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111165731) do
+ActiveRecord::Schema.define(version: 20141112123406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "multi_choice_options", force: true do |t|
-    t.string   "body",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "body",                  null: false
+    t.integer  "multi_choice_style_id", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "multi_choice_styles", force: true do |t|
-    t.integer  "multi_choice_option_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "body",                   null: false
+    t.text     "body",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: true do |t|

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :questions, only: [:show, :new, :create]
     resources :text_styles, only: [:create, :new]
     resources :multi_choice_styles, only: [:new, :create, :show]
+  end
+
+  resources :multi_choice_styles, only: [] do
     resources :multi_choice_options, only: [:new, :create, :show]
   end
 

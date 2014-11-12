@@ -1,3 +1,7 @@
 <%= multi_choice_style.body %>
 
-<%= link_to "Add new answer option", new_survey_multi_choice_option_path(@survey) %>
+<%= link_to "Add new answer option", new_multi_choice_style_multi_choice_option_path(multi_choice_style) %> 
+
+<ul>
+  <%= render multi_choice_style.multi_choice_options %>
+</ul>

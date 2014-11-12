@@ -1,3 +1,9 @@
 <h2>Add answer option</h2>
 
+<%= form_for [@multi_choice_style, @multi_choice_option] do |form| %>
+<%= form.label :body %>
+<%= form.text_field :body %>
+<%= form.submit %>
+<% end %>
+
 
