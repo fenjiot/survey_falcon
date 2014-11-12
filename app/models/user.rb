@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   has_many :surveys
+  has_many :responses
 end
