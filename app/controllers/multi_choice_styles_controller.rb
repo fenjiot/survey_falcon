@@ -9,7 +9,7 @@ class MultiChoiceStylesController < ApplicationController
     @multi_choice_style = MultiChoiceStyle.new(multi_choice_style_params)
     if @multi_choice_style.save
       @survey.questions.create(style: @multi_choice_style)
-      redirect_to @survey
+      redirect_to survey_path(@survey)
     else
       render :new
     end

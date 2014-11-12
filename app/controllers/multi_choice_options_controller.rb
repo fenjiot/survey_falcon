@@ -28,6 +28,6 @@ class MultiChoiceOptionsController < ApplicationController
 
   def question
     Question.find_by(style_id: params[:multi_choice_style_id],
-                   style_type: "MultiChoiceStyle")
+                     style_type: "MultiChoiceStyle")
   end
 end
