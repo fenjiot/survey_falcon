@@ -5,9 +5,9 @@
     <li>
       <%= question.style.body %>
       <ul>
-        <% question.responses.each do |response| %>
+        <% question.responses.each do |question_response| %>
           <li>
-            <%= response.answer.body %>
+            <%= question_response.answer.body %>
           </li>
         <% end %>
       </ul>

@@ -17,7 +17,7 @@ class MultiChoiceStylesController < ApplicationController
 
   def show
     @multi_choice_style = load_multi_choice_style_from_url
-    @multi_choice_options = @multi_choice_style.multi_choice_options 
+    @multi_choice_options = @multi_choice_style.multi_choice_options
   end
 
   private
@@ -27,7 +27,8 @@ class MultiChoiceStylesController < ApplicationController
   end
 
   def multi_choice_style_params
-    params.require(:multi_choice_style).permit(:body)
+    params.require(:multi_choice_style).
+      permit(:body, multi_choice_option_ids: [])
   end
 
   def load_multi_choice_style_from_url

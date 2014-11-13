@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :questions, only: [] do
     resources :text_answers, only: [:create]
+    resources :multi_choice_answers, only: [:create]
   end
 
   resources :multi_choice_styles, only: [] do
