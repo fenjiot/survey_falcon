@@ -1,6 +1,6 @@
 class ResponsesController < ApplicationController
   def index
-   @survey = load_survey_from_url
+    @survey = load_survey_from_url
   end
 
   private
