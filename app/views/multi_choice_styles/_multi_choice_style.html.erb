@@ -3,6 +3,6 @@
 <%= link_to "Add new answer option", new_multi_choice_style_multi_choice_option_path(multi_choice_style) %>
 
 <%= form_for [multi_choice_style.question, MultiChoiceAnswer.new] do |form| %>
-  <%= form.collection_radio_buttons(:multi_choice_option_id, MultiChoiceOption.all, :id, :body) %>
+  <%= form.collection_radio_buttons(:multi_choice_option_id, multi_choice_style.options, :id, :body) %>
   <%= form.submit %>
 <% end %>
