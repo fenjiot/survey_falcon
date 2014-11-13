@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112190522) do
+ActiveRecord::Schema.define(version: 20141113183559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "multi_choice_answers", force: true do |t|
+    t.string   "body",                   null: false
+    t.integer  "multi_choice_option_id", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "multi_choice_answers", ["multi_choice_option_id"], name: "index_multi_choice_answers_on_multi_choice_option_id", using: :btree
 
   create_table "multi_choice_options", force: true do |t|
     t.string   "body",                  null: false
