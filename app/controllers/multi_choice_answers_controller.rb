@@ -17,10 +17,4 @@ class MultiChoiceAnswersController < ApplicationController
     params.require(:multi_choice_answer).
       permit(:multi_choice_option_id)
   end
-
-  def multi_choice_option_body
-    multi_choice_option_id = params[:multi_choice_answer]["multi_choice_option_id"]
-    multi_choice_option  = MultiChoiceOption.find(multi_choice_option_id)
-    multi_choice_option.body
-  end
 end

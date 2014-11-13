@@ -27,7 +27,8 @@ class MultiChoiceStylesController < ApplicationController
   end
 
   def multi_choice_style_params
-    params.require(:multi_choice_style).permit(:body, multi_choice_option_ids:[])
+    params.require(:multi_choice_style).
+      permit(:body, multi_choice_option_ids:[])
   end
 
   def load_multi_choice_style_from_url
