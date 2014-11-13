@@ -7,7 +7,7 @@
       <ul>
         <% question.responses.each do |question_response| %>
           <li>
-            <%= question_response.answer.body %>
+            <%= render question_response.answer %>
           </li>
         <% end %>
       </ul>

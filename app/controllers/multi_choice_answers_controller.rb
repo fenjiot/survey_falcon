@@ -15,8 +15,7 @@ class MultiChoiceAnswersController < ApplicationController
 
   def multi_choice_answer_params
     params.require(:multi_choice_answer).
-      permit(:multi_choice_option_id).
-      merge(body: multi_choice_option_body)
+      permit(:multi_choice_option_id)
   end
 
   def multi_choice_option_body
