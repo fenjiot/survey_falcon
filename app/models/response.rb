@@ -5,4 +5,5 @@ class Response < ActiveRecord::Base
 
   belongs_to :answer, polymorphic: true, dependent: :destroy
   belongs_to :user
+  belongs_to :question
 end

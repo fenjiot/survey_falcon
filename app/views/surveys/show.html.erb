@@ -4,6 +4,7 @@
   <%= link_to "Add a text question", new_survey_text_style_path(@survey) %>
   <%= link_to "Edit survey", edit_survey_path(@survey) %>
   <%= button_to "Delete survey", survey_path(@survey), method: :delete %>
+  <%= link_to "Survey responses", survey_responses_path(@survey) %>
 <% end %>
 <%= link_to "Add a text question", new_survey_text_style_path(@survey) %>
 <%= link_to "Add a multiple choice question", new_survey_multi_choice_style_path(@survey) %>

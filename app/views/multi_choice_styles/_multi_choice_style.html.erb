@@ -3,8 +3,5 @@
 <%= link_to "Add new answer option", new_multi_choice_style_multi_choice_option_path(multi_choice_style) %>
 
 <ul>
-  <%= form_for @multi_choice_answer do |form| %>
-    <%= form.label "labelsz" %>
   <%= render multi_choice_style.multi_choice_options %>
-<% end %>
 </ul>
