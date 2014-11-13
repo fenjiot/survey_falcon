@@ -5,6 +5,6 @@ class MultiChoiceStyle < ActiveRecord::Base
   has_one :question, as: :style
 
   def options
-    MultiChoiceOption.where(id: id)
+    MultiChoiceOption.where(id: self.id)
   end
 end
