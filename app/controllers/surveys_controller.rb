@@ -18,7 +18,7 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.find(params[:id])
-    @text_answer = TextAnswer.new 
+    @text_answer = TextAnswer.new
   end
 
   def edit
