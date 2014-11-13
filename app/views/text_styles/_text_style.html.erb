@@ -1,6 +1,6 @@
 <%= text_style.body %>
 
-<%= form_for [text_style.question, @text_answer] do |form| %>
+<%= form_for [text_style.question, TextAnswer.new] do |form| %>
   <%= form.label :body %>
   <%= form.text_field :body %>
   <%= form.submit "Answer" %>

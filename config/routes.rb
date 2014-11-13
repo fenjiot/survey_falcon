@@ -9,13 +9,12 @@ Rails.application.routes.draw do
   end
 
   resources :questions, only: [] do
-    resources :text_answers
+    resources :text_answers, only: [:create]
   end
 
   resources :multi_choice_styles, only: [] do
     resources :multi_choice_options, only: [:new, :create, :show]
   end
-
 
   root "surveys#index"
 end
