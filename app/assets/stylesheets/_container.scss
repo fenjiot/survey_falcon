@@ -1,0 +1,8 @@
+div.container {
+  @include outer-container;
+  background: #CCB222;
+}
+
+div.content {
+  @include span-columns(8);
+}
