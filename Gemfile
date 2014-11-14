@@ -7,11 +7,14 @@ gem 'jquery-rails'
 gem 'monban-generators'
 gem 'neat'
 gem 'pg'
-gem 'pry'
 gem 'rails', '4.1.6'
-gem 'rails_12factor', group: :production
 gem 'sass-rails', '~> 4.0.3'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
-gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+
+group :development do
+  gem 'pry'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
